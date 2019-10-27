@@ -2,7 +2,17 @@
 
 AURA is aim at creating a website that can provide a platform to share information related to rentals. The main source of information is created by users. As a landlord, users can create a rental subpage at AURA by providing basic information such as address, image and price. As a tenant, users can use filters to find listings, browse home information, communicate with landlords, place orders and view order details. For convenience, users do not need to register separate accounts for the identity of the landlord and the tenant, but a unified account.
 
-[toc]
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+  * [Admin Page](#admin-page)
+  * [Collection and Search Page](#collection-and-search-page)
+  * [House Host Page](#house-host-page)
+  * [House Detail and Comments](#house-detail-and-comments)
+  * [Profile Edit Page](#profile-edit-page)
+  * [My Order & House Page](#my-order---house-page)
+- [File Manifest](#file-manifest)
+
 
 # Features
 
@@ -28,9 +38,9 @@ In `DatabaseProductManager.java` line 91 and `UserManagerService.java` line 108,
 ```java
 public void savemyPhoto(String id, MultipartFile file) {
   	...
-		String pathroot="YOUR_UPLOAD_FOLDER_ADDRESS";
-		String path ="resources/images/"+"house-"+ id+".jpg";
-		...
+	String pathroot="YOUR_UPLOAD_FOLDER_ADDRESS";
+	String path ="resources/images/"+"house-"+ id+".jpg";
+	...
 	}
 ```
 
@@ -46,7 +56,7 @@ In `/src/main/resources/database.properties` file, you will have to change the â
 jdbc.databaseName=DATABASE_NAME
 jdbc.url=jdbc:mysql://localhost:3306/DATABASE_NAME?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
 jdbc.username=root
-jdbc.password=DATABASE_NAME
+jdbc.password=DATABASE_PASSWORD
 ```
 
 # Usage
