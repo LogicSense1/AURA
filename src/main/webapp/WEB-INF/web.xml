@@ -13,6 +13,11 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+	
+	<error-page>
+2     <error-code>404</error-code>
+3     <location>/WEB-INF/views/wrong.jsp</location>
+4   </error-page>
 
 	<!-- Processes application requests -->
 	<servlet>
