@@ -193,6 +193,7 @@ House management page is designed for users to check or delete houses they have 
 
 # File Manifest
 
+```
 ├─src
 │  ├─main
 │  │  ├─java
@@ -406,4 +407,4 @@ House management page is designed for users to check or delete houses they have 
                 └─elec5619
                     └─web
                             InventoryControllerTest.class
-                            
+```
