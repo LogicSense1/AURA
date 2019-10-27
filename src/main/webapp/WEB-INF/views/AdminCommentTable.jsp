@@ -56,12 +56,21 @@
 				</td>
 				<td>
 					<a href="/elec5619/admin/producttable">
-    <button type="button" class="btn-icon-clipboard">
-      <div>
-        <i class="ni ni-single-copy-04"></i>
-        <span>Products</span>
-      </div>
-    </button>
+    				<button type="button" class="btn-icon-clipboard">
+      				<div>
+        				<i class="ni ni-single-copy-04"></i>
+        				<span>Products</span>
+      				</div>
+    				</button>
+				</td>
+				<td>
+					<a href="/elec5619/admin">
+    				<button type="button" class="btn-icon-clipboard">
+      				<div>
+        				<i class="ni ni-bold-left"></i>
+        				<span>Back</span>
+      				</div>
+    				</button>
 				</td>
 			</tbody>
 		</table>
@@ -79,7 +88,6 @@
 									<th scope="col">Comment id</th>
 									<th scope="col">User ID</th>
 									<th scope="col">Product ID</th>
-									<th scope="col">Subject</th>
 									<th scope="col">Content</th>
 									<th scope="col">Score</th>
 									<th scope="col">Set time</th>
@@ -91,7 +99,6 @@
 										<th scope="row"><c:out value="${comt.id}" /></th>
 										<td><c:out value="${comt.userId}" /></td>
 										<td><c:out value="${comt.productId}" /></td>
-										<td><c:out value="${comt.subject}" /></td>
 										<td><c:out value="${comt.content}" /></td>
 										<td><c:out value="${comt.score}" /></td>
 										<td><c:out value="${comt.time}" /></td>
@@ -104,7 +111,7 @@
 												</a>
 												<div
 													class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-													<a class="dropdown-item" href="comment/delete/${comt.id }">Delete</a>
+													<a class="dropdown-item" href="/elec5619/admincomment/delete/${comt.id}">Delete</a>
 												</div>
 											</div>
 										</td>

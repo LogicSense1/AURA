@@ -25,6 +25,8 @@ public interface ProductManager extends Serializable {
 	
 	public long countAllProducts();
 	
+	public void orderProduct(int id);
+	
 	public long countSearchProducts(String keyword);
 
 	void savemyPhoto(String id, MultipartFile file);	

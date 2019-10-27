@@ -12,10 +12,8 @@ public interface CommentAdminManager extends Serializable{
 	
 	public List<Comment> getComments();
 	
-	public Comment getCommentById(int id);
+	public Comment getCommentById(long id);
 	
-	public void updateComment(Comment comment);
-	
-	public void deleteComment(int id);
+	public void deleteComment(long id);
 	
 }

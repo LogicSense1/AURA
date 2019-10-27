@@ -73,7 +73,7 @@
 					</tr>
 
 								<tr>
-									<th style="text-align: center;"><a href="AdminUserTable.htm"><button>Cancel</button></a></th>
+									<th style="text-align: center;"><a href="/elec5619/admin/usertable"><button>Cancel</button></a></th>
 									<!--  This hidden field is required for Hibernate to recognize this Product -->
 									<td style="text-align: left;"><input type="submit" value="Done"/></td>
 								</tr>

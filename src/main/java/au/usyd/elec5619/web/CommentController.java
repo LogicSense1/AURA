@@ -60,8 +60,13 @@ public class CommentController {
         	User user = this.userManager.getUserbyId(userid);
         	aModel.put("status", user.getUserName());
         }
+        
+        long productid = (long) id;
 		
-		List<Comment> comments = this.scm.getCommentsByProduct(id);
+		List<Comment> comments = this.scm.getCommentsByProduct(productid);
+		for (Comment comment : comments) {
+			comment.setUserName(this.userManager.getUserbyId(comment.getUserId()).getUserName());
+		}
 		Product product = this.productManager.getProductById(id);
 		model.addAttribute("house", product);
 		System.out.println(product);
@@ -92,6 +97,7 @@ public class CommentController {
 		order.setEndDate(enddate);
 		order.setOwner_ID(product.getOwnerID());
 		order.setHouse_ID(product.getID());
+		this.productManager.orderProduct(product.getID());
 		this.orderManager.addOrder(order);
 		return "redirect:/myaccount/myorder";
 	}

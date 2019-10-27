@@ -74,8 +74,7 @@
 		class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
 		id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index.html" style="color: black">A
-				R U A</span>
+			<a class="navbar-brand" href="/elec5619/hello.html" style="color: black">A U R A</span>
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#ftco-nav" aria-controls="ftco-nav"
@@ -169,9 +168,12 @@
 									class="form-control"
 									style="width: 47%; float: right; margin-bottom: 1rem;"
 									name="end" id="end">
-							
-								<input type="button" value="Order"
-									class="btn btn-primary py-3 px-5" onclick="order();">
+								
+								<script>
+									if ("${house.status}" == "available") document.write("<input type=\"button\" value=\"Order\" class=\"btn btn-primary py-3 px-5\" onclick=\"order();\">");
+									else document.write("<span style=\"color: black; font-size: 15px;\"class=\"subheading\"><br><br><br>This house has already been ordered.</span>")
+								</script>
+								
 							</div>
 						</div>
 					</div>
@@ -184,10 +186,6 @@
 						<div class="d-flex justify-content-center">
 							<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
 
-								<!--<li class="nav-item">
-                                <a class="nav-link active" id="pills-description-tab" data-toggle="pill"
-                                   href="#pills-description" role="tab" aria-controls="pills-description"
-                                   aria-expanded="true">Features</a>-->
 
 								</li>
 								<li class="nav-item"><a class="nav-link active"
@@ -203,51 +201,15 @@
 						</div>
 
 						<div class="tab-content" id="pills-tabContent">
-							<div class="tab-pane fade" id="pills-description" role="tabpanel"
-								aria-labelledby="pills-description-tab">
-								<div class="row">
-									<div class="col-md-4">
-										<ul class="features">
-											<li class="check"><span class="ion-ios-checkmark"></span>Airconditions</li>
-											<li class="check"><span class="ion-ios-checkmark"></span>Child
-												Seat</li>
-											<li class="check"><span class="ion-ios-checkmark"></span>GPS</li>
-											<li class="check"><span class="ion-ios-checkmark"></span>Luggage</li>
-											<li class="check"><span class="ion-ios-checkmark"></span>Music</li>
-										</ul>
-									</div>
-									<div class="col-md-4">
-										<ul class="features">
-											<li class="check"><span class="ion-ios-checkmark"></span>Seat
-												Belt</li>
-											<li class="remove"><span class="ion-ios-close"></span>Sleeping
-												Bed</li>
-											<li class="check"><span class="ion-ios-checkmark"></span>Water</li>
-											<li class="check"><span class="ion-ios-checkmark"></span>Bluetooth</li>
-											<li class="remove"><span class="ion-ios-close"></span>Onboard
-												computer</li>
-										</ul>
-									</div>
-									<div class="col-md-4">
-										<ul class="features">
-											<li class="check"><span class="ion-ios-checkmark"></span>Audio
-												input</li>
-											<li class="check"><span class="ion-ios-checkmark"></span>Long
-												Term Trips</li>
-											<li class="check"><span class="ion-ios-checkmark"></span>Car
-												Kit</li>
-											<li class="check"><span class="ion-ios-checkmark"></span>Remote
-												central locking</li>
-											<li class="check"><span class="ion-ios-checkmark"></span>Climate
-												control</li>
-										</ul>
-									</div>
-								</div>
-							</div>
 
 							<div class="tab-pane fade show active" id="pills-manufacturer"
 								role="tabpanel" aria-labelledby="pills-manufacturer-tab">
-								<p>${house.description}</p>
+								<p id="textpart">${house.description}</p>
+								<script>
+									document.getElementById("textpart").innerHTML = document.getElementById("textpart").innerHTML.replace(/\n/g, "<br>");
+								</script>
+
+								 
 
 								<div id="map"></div>
 								<script>
@@ -277,16 +239,16 @@
 
 
 								<!------------------------------------------------------------------------------------------------------------>
-								<div class="row">
+								<div class="row" style="margin-top:20px;">
 									<div class="col-md-7">
 										<c:forEach items="${model.comments}" var="prodd">
 											<div class="review d-flex">
 												<div class="user-img"
-													style="background-image: url(elec5619/resources/images/${prodd.userId}.jpg)"></div>
+													style="background-image: url('/elec5619/resources/images/${prodd.userId}.jpg')"></div>
 												<div class="desc">
 													<h4>
 														<span class="text-left"><c:out
-																value="${prodd.userId}" /></span> <span class="text-right"><c:out
+																value="${prodd.userName}" /></span> <span class="text-right"><c:out
 																value="${prodd.time}" /></span>
 													</h4>
 													<p>
@@ -365,7 +327,7 @@
 			<div class="row mb-5">
 				<div class="col-md">
 					<div class="ftco-footer-widget mb-4">
-						<h2 class="ftco-heading-2">About Autoroad</h2>
+						<h2 class="ftco-heading-2">About AURA</h2>
 						<p>Far far away, behind the word mountains, far from the
 							countries Vokalia and Consonantia, there live the blind texts.</p>
 						<ul
@@ -405,22 +367,6 @@
 						</ul>
 					</div>
 				</div>
-				<div class="col-md">
-					<div class="ftco-footer-widget mb-4">
-						<h2 class="ftco-heading-2">Have a Questions?</h2>
-						<div class="block-23 mb-3">
-							<ul>
-								<li><span class="icon icon-map-marker"></span><span
-									class="text">203 Fake St. Mountain View, San Francisco,
-										California, USA</span></li>
-								<li><a href="#"><span class="icon icon-phone"></span><span
-										class="text">+2 392 3929 210</span></a></li>
-								<li><a href="#"><span class="icon icon-envelope"></span><span
-										class="text">info@yourdomain.com</span></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12 text-center">
@@ -428,7 +374,7 @@
 					<p>
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 						Copyright &copy;
-						<script>document.write(new Date().getFullYear());</script>
+						<script>document.write(new Date().getFullYear())</script>
 						All rights reserved | This template is made with <i
 							class="icon-heart color-danger" aria-hidden="true"></i> by <a
 							href="https://colorlib.com" target="_blank">Colorlib</a>

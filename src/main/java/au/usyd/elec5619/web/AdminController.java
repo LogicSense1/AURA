@@ -65,7 +65,7 @@ public class AdminController {
 		
 		Map<String, Object> myModel = new HashMap<String, Object>();
 		myModel.put("now", now);
-		myModel.put("products", this.orderAdminManager.getOrders());
+		myModel.put("orders", this.orderAdminManager.getOrders());
 		
 		return new ModelAndView("AdminOrderTable", "model", myModel);
 	}

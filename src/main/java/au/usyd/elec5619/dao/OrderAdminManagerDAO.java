@@ -12,6 +12,10 @@ import au.usyd.elec5619.domain.Order;
 
 @Repository(value = "OrderAdminManagerDAO")
 public class OrderAdminManagerDAO {
+	
+	private enum statusKind {
+		nil, rented, available
+	}
 
     @Resource
     private SessionFactory sessionFactory;
@@ -38,6 +42,8 @@ public class OrderAdminManagerDAO {
 	public void deleteOrder(int id) {
 		Session currentSession = this.sessionFactory.getCurrentSession();
 		Order order = (Order) currentSession.get(Order.class, id);
+		String hqlString = "update Product p set p.status=? where p.ID=?";
+		this.sessionFactory.getCurrentSession().createQuery(hqlString).setParameter(0, statusKind.available).setParameter(1, order.getHouse_ID()).executeUpdate();
 		currentSession.delete(order);
 	}
 	

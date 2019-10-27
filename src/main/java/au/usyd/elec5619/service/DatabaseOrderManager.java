@@ -17,6 +17,10 @@ public class DatabaseOrderManager implements OrderManager{
 
 	private SessionFactory sessionFactory;
 	
+	private enum statusKind {
+		nil, rented, available
+	}
+	
 	@Autowired
 	public void setSessionfactory(SessionFactory sf) {
 		this.sessionFactory = sf;
@@ -75,7 +79,6 @@ public class DatabaseOrderManager implements OrderManager{
 	public void cancelOrder(int id) {
 		Session currentSession = this.sessionFactory.getCurrentSession();
 		Order order = (Order) currentSession.get(Order.class, id);
-		
 		order.setCurrentStatus("canceled");
 		currentSession.merge(order);
 	}

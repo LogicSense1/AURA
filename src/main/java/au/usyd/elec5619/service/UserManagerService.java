@@ -96,7 +96,8 @@ public class UserManagerService implements UserManager {
 	public String userProfileEdit(User user, String password_again) {
 		String password = user.getPassword();
 		if (password.equals(password_again)) {
-			user.setPassword(getMD5Hash(password_again));
+			if (this.userManagerDAO.getUserbyId(user.getId()).getPassword().equals(password_again)) user.setPassword(password_again);
+			else user.setPassword(getMD5Hash(password_again));
 			this.userManagerDAO.updateUser(user);
 			return null;
 		}

@@ -68,15 +68,15 @@
 <section class="ftco-section contact-section">
     <div class="row block-9 justify-content-center mb-5">
         <div class="col-md-8 mb-md-5">
-            <h2 class="text-center">Hello landlord, <br> you can upload pictures here! </h2>
+            <h2 class="text-center">Hello landlord, <br> you can upload at least 3 pictures here! </h2>
             <form enctype="multipart/form-data">
                 <input type="hidden" id="imagepath" name="file">
                 <span id="upload_object"   class="btn btn-primary"  style="margin-left: 10px; padding-top: 5px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px;">Upload</span>
-                
                 <div class="show"></div>
             </form>
+            <div style="display:none" id="counter">0</div>
             <div class="form-group">
-					<input type="button" value="Finish" onclick="jumping();"
+					<input type="button" value="Finish" onclick="if (parseInt(document.getElementById('counter').innerHTML) < 3) alert('You have to upload at least 3 pictures.'); else window.location.href = '/elec5619/house/' +  document.URL.split('uploadphoto/')[1];"
 						class="btn btn-primary py-3 px-5" style="float: right;margin-right: 10px;">
 				</div>
         </div>
@@ -190,6 +190,8 @@
         },
         successPort: function (e) {
             console.log("success");
+            document.getElementById("counter").innerHTML = parseInt(document.getElementById("counter").innerHTML) + 1
+            console.log(document.getElementById("counter").innerHTML);
             onload_image()
         },
         errorPort: function (e) {

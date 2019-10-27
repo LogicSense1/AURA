@@ -28,7 +28,7 @@
 </head>
 
 <body>
-	<div class="image-container set-full-height" style="background-image: url('${cp}/images/bg2.jpg')">
+	<div class="image-container set-full-height" style="background-image: url('/elec5619/resources/images/bg2.jpg')">
 	    <!--   Big container   -->
 	    <div class="container">
 	        <div class="row">
@@ -56,7 +56,7 @@
 		                                    <br><br>
 		                                    	<div class="picture-container">
 		                                        	<div class="picture">
-                                        				<img src="/elec5619/resources/images/${user.id}.jpg" class="picture-src" id="myphotodisplay" onerror="this.src='/elec5619/resources/user/resources/images/default-avatar.png';this.onerror=null"/>
+                                        				<img src="/elec5619/resources/images/${userid}.jpg" class="picture-src" id="myphotodisplay" onerror="this.src='/elec5619/resources/user/resources/images/default-avatar.png';this.onerror=null"/>
 		                                            	<input type="file" name="myphoto" id="myphoto" accept=".jpg">
 		                                        	</div>
 		                                        	<h6>Choose Picture</h6>

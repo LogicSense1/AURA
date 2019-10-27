@@ -19,9 +19,7 @@ import au.usyd.elec5619.domain.User;
 @Service(value="orderAdminManager")
 @Transactional
 public class OrderAdminManagerService implements OrderAdminManager{
-	///
-	private List<Order> orders;
-	///
+	
 	@Autowired
 	private OrderAdminManagerDAO orderAdminManagerDAO;
 	
@@ -44,10 +42,6 @@ public class OrderAdminManagerService implements OrderAdminManager{
 	@Override
 	public List<Order> getOrders() {
 		return this.orderAdminManagerDAO.getOrders();
-	}
-	
-	public void setOrders(List<Order> orders) {
-		this.orders = orders;
 	}
 
 }

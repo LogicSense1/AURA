@@ -63,6 +63,15 @@
       </div>
     </button>
 				</td>
+				<td>
+					<a href="/elec5619/admin">
+    				<button type="button" class="btn-icon-clipboard">
+      				<div>
+        				<i class="ni ni-bold-left"></i>
+        				<span>Back</span>
+      				</div>
+    				</button>
+				</td>
 			</tbody>
 		</table>
 		</center>
@@ -96,7 +105,7 @@
 										<td><c:out value="${ords.owner_ID}" /></td>
 										<td><c:out value="${ords.house_ID}" /></td>
 										<td><c:out value="${ords.cost}" /></td>
-										<td><c:out value="${ords.createdTIme}" /></td>
+										<td><c:out value="${ords.createdTime}" /></td>
 										<td><c:out value="${ords.startDate}" /></td>
 										<td><c:out value="${ords.endDate}" /></td>
 										<td><c:out value="${ords.currentStatus}" /></td>
@@ -109,8 +118,8 @@
 												</a>
 												<div
 													class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-													<a class="dropdown-item" href="/elec5619/adminproduct/edit/${ords.id}">Edit</a>
-													<a class="dropdown-item" href="/elec5619/adminproduct/delete/${ords.id }">Delete</a>
+													
+													<a class="dropdown-item" href="/elec5619/adminorder/delete/${ords.ID }">Delete</a>
 												</div>
 											</div>
 										</td>

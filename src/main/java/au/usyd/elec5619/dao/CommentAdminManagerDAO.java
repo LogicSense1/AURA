@@ -24,18 +24,14 @@ public class CommentAdminManagerDAO {
         this.sessionFactory = sessionFactory;
     }
 
-    public Comment getCommentById(int id) {
+    public Comment getCommentById(long id) {
 		Session currentSession = this.sessionFactory.getCurrentSession();
 		Comment comment = (Comment) currentSession.get(Comment.class, id);
 		return comment;
 	}
 	
-	public void updateComment(Comment comment) {
-		Session currentSession = this.sessionFactory.getCurrentSession();
-		currentSession.merge(comment);
-	}
-	
-	public void deleteComment(int id) {
+
+	public void deleteComment(long id) {
 		Session currentSession = this.sessionFactory.getCurrentSession();
 		Comment comment = (Comment) currentSession.get(Comment.class, id);
 		currentSession.delete(comment);

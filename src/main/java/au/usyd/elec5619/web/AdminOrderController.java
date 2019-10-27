@@ -35,7 +35,7 @@ public class AdminOrderController {
 	}
 	
 	@RequestMapping(value="/edit/**", method=RequestMethod.POST)
-	public String editProduct(@Valid Order order) {
+	public String editOrder(@Valid Order order) {
 		
 		this.orderAdminManager.updateOrder(order);
 		System.out.println(order.getID());
@@ -44,7 +44,7 @@ public class AdminOrderController {
 	}
 	
 	@RequestMapping(value="/delete/{id}", method=RequestMethod.GET)
-	public String deleteProduct(@PathVariable("id") int id) {
+	public String deleteOrder(@PathVariable("id") int id) {
 		
 		this.orderAdminManager.deleteOrder(id);
 		

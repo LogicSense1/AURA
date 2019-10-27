@@ -31,6 +31,8 @@ public class Comment implements Serializable{
 	@Column(name="time")
 	private Date time;
 	
+	private String  userName;
+	
 	public long getId() {
 		return this.id;
 	}
@@ -87,5 +89,11 @@ public class Comment implements Serializable{
 		this.time = time;
 	}
 	
+	public String getUserName() {
+		return this.userName;
+	}
 	
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
 }

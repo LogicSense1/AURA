@@ -63,6 +63,15 @@
       </div>
     </button>
 				</td>
+				<td>
+					<a href="/elec5619/admin">
+    				<button type="button" class="btn-icon-clipboard">
+      				<div>
+        				<i class="ni ni-bold-left"></i>
+        				<span>Back</span>
+      				</div>
+    				</button>
+				</td>
 			</tbody>
 		</table>
 		</center>

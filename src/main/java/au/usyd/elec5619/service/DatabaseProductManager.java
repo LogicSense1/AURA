@@ -20,6 +20,10 @@ public class DatabaseProductManager implements ProductManager{
 	
 	private SessionFactory sessionFactory;
 	
+	private enum statusKind {
+		nil, rented, available
+	}
+	
 	@Autowired
 	public void setSessionfactory(SessionFactory sf) {
 		this.sessionFactory = sf;
@@ -83,6 +87,17 @@ public class DatabaseProductManager implements ProductManager{
 				.setMaxResults(8)
 				.list();
 				
+	}
+	
+	public void orderProduct(int id) {
+		String hqlString = "update Product p set p.status=? where p.ID=?";
+		this.sessionFactory.getCurrentSession().createQuery(hqlString).setParameter(0, statusKind.rented).setParameter(1, id).executeUpdate();
+		//this.sessionFactory.getCurrentSession().getTransaction().commit();
+	}
+	
+	public void avaProduct(int id) {
+		String hqlString = "update Product p set p.status=? where p.ID=?";
+		this.sessionFactory.getCurrentSession().createQuery(hqlString).setParameter(0, statusKind.available).setParameter(1, id).executeUpdate();
 	}
 	
 	

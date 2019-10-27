@@ -25,18 +25,13 @@ public class CommentAdminManagerService implements CommentAdminManager{
 	@Autowired
 	private CommentAdminManagerDAO commentAdminManagerDAO;
 	
-	public Comment getCommentById(int id) {
+	public Comment getCommentById(long id) {
 		return this.commentAdminManagerDAO.getCommentById(id);
 	}
 
-	@Override
-	public void updateComment(Comment comment) {
-		this.commentAdminManagerDAO.updateComment(comment);
-		
-	}
 	
 	@Override
-	public void deleteComment(int id) {
+	public void deleteComment(long id) {
 		this.commentAdminManagerDAO.deleteComment(id);
 		
 	}
@@ -45,9 +40,4 @@ public class CommentAdminManagerService implements CommentAdminManager{
 	public List<Comment> getComments() {
 		return this.commentAdminManagerDAO.getComments();
 	}
-	
-	public void setComments(List<Comment> comments) {
-		this.comments = comments;
-	}
-
 }

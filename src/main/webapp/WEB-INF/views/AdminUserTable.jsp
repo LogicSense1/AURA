@@ -56,7 +56,7 @@
     </button>
 				</td>
 				<td>
-					<a href="/elec5619/admin/commentable">
+					<a href="/elec5619/admin/commenttable">
     <button type="button" class="btn-icon-clipboard">
       <div>
         <i class="ni ni-single-copy-04"></i>
@@ -64,6 +64,14 @@
       </div>
     </button>
 				</td>
+				<td>
+					<a href="/elec5619/admin">
+    				<button type="button" class="btn-icon-clipboard">
+      				<div>
+        				<i class="ni ni-bold-left"></i>
+        				<span>Back</span>
+      				</div>
+    				</button>
 			</tbody>
 		</table>
 		</center>
